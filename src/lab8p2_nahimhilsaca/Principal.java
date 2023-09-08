@@ -75,6 +75,9 @@ public class Principal extends javax.swing.JFrame {
         tablanadadores = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        tablaeventos = new javax.swing.JTable();
+        botonactualizareventos = new javax.swing.JButton();
         jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -389,15 +392,47 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Listar Nadadores", jPanel5);
 
+        tablaeventos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
+            },
+            new String [] {
+                "Esrilo de Natacion", "Distancia", "Record Actual"
+            }
+        ));
+        jScrollPane4.setViewportView(tablaeventos);
+
+        botonactualizareventos.setText("Actualizar Tabla");
+        botonactualizareventos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                botonactualizareventosMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1040, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(366, 366, 366)
+                        .addComponent(botonactualizareventos, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(85, 85, 85)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 729, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(23, 23, 23)
+                .addComponent(botonactualizareventos, javax.swing.GroupLayout.PREFERRED_SIZE, 67, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 591, Short.MAX_VALUE)
+                .addGap(30, 30, 30))
         );
 
         jTabbedPane1.addTab("Listar Eventos", jPanel6);
@@ -547,6 +582,24 @@ public class Principal extends javax.swing.JFrame {
             
     }//GEN-LAST:event_jButton2MouseClicked
 
+    private void botonactualizareventosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_botonactualizareventosMouseClicked
+       int cont=0;
+            
+     
+            
+             DefaultTableModel modelo = (DefaultTableModel)tablaeventos.getModel();
+            
+            for (int i = 0; i < eventos.size(); i++) {
+          
+                    
+                    modelo.setValueAt(eventos.get(i).getEstilo_natacion(), cont, 0);
+                     modelo.setValueAt(eventos.get(i).getDistancia_evento(), cont, 1);
+                      modelo.setValueAt(eventos.get(i).getRecord_actual(), cont, 2);
+                      
+                   
+            }
+    }//GEN-LAST:event_botonactualizareventosMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -586,6 +639,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton AnadirNadadoralPais;
     private javax.swing.JComboBox<String> CB_listarpaises;
     private javax.swing.JButton CrearEvento;
+    private javax.swing.JButton botonactualizareventos;
     private javax.swing.JComboBox<String> cb_estiloevento;
     private javax.swing.JComboBox<String> distancia;
     private javax.swing.JComboBox<String> distanciaeventocb;
@@ -617,6 +671,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JSpinner medallas_nadador;
     private javax.swing.JTextArea nombepais;
@@ -624,6 +679,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea nombre_nadador;
     private javax.swing.JSpinner numemdallas;
     private javax.swing.JSpinner recordevento;
+    private javax.swing.JTable tablaeventos;
     private javax.swing.JTable tablanadadores;
     private javax.swing.JSpinner tiempo;
     // End of variables declaration//GEN-END:variables
