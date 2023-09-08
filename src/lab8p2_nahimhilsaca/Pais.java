@@ -16,9 +16,8 @@ public class Pais {
     private ArrayList <Nadador> nadadores = new ArrayList<>();
     private int num_medallas;
 
-    public Pais(String nombre, ArrayList<Nadador> nadadores, int num_medallas) {
+    public Pais(String nombre, int num_medallas) {
         this.nombre = nombre;
-        this.nadadores = nadadores;
         this.num_medallas = num_medallas;
     }
 
@@ -48,7 +47,7 @@ public class Pais {
 
     @Override
     public String toString() {
-        return "Pais" + "nombre=" + nombre + "nadadores=" + nadadores + " num_medallas=" + num_medallas ;
+        return "Pais" + "nombre:" + nombre + " num_medallas:" + num_medallas ;
     }
     
     
