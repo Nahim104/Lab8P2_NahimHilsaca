@@ -7,6 +7,7 @@ package lab8p2_nahimhilsaca;
 import java.util.ArrayList;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -68,11 +69,24 @@ public class Principal extends javax.swing.JFrame {
         tiempo = new javax.swing.JSpinner();
         medallas_nadador = new javax.swing.JSpinner();
         AnadirNadadoralPais = new javax.swing.JButton();
+        jPanel5 = new javax.swing.JPanel();
+        CB_listarpaises = new javax.swing.JComboBox<>();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        tablanadadores = new javax.swing.JTable();
+        jButton2 = new javax.swing.JButton();
+        jPanel6 = new javax.swing.JPanel();
+        jPanel7 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(150, 132, 137));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jTabbedPane1.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jTabbedPane1StateChanged(evt);
+            }
+        });
 
         jLabel11.setText("Estilo de Natacion");
 
@@ -201,6 +215,11 @@ public class Principal extends javax.swing.JFrame {
 
         jLabel4.setText("Nacionalidad");
 
+        nombre_nacionalidad.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                nombre_nacionalidadItemStateChanged(evt);
+            }
+        });
         nombre_nacionalidad.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 nombre_nacionalidadMouseClicked(evt);
@@ -314,6 +333,88 @@ public class Principal extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Crear Nadador", jPanel2);
 
+        CB_listarpaises.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CB_listarpaisesMouseClicked(evt);
+            }
+        });
+
+        tablanadadores.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Nombre", "Edad", "Estatura", "Estilo", "Distancia", "Tiempo mas Rapido", "Numero de Medallas"
+            }
+        ));
+        jScrollPane3.setViewportView(tablanadadores);
+
+        jButton2.setText("Actualizar Tabla");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 953, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel5Layout.createSequentialGroup()
+                        .addComponent(CB_listarpaises, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(119, 119, 119)
+                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(47, Short.MAX_VALUE))
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(CB_listarpaises)
+                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, 65, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 492, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(136, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Listar Nadadores", jPanel5);
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 729, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar Eventos", jPanel6);
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 1040, Short.MAX_VALUE)
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 729, Short.MAX_VALUE)
+        );
+
+        jTabbedPane1.addTab("Listar Paises", jPanel7);
+
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 50, 1040, 760));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -336,7 +437,11 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
        paises.add(new Pais(nombepais.getText(), (int)numemdallas.getValue()));
+       
+       nombepais.setText("");
         JOptionPane.showMessageDialog(this, "Pais agregado");
+        
+        
     }//GEN-LAST:event_jButton1MouseClicked
 
     private void nombre_nacionalidadMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nombre_nacionalidadMouseClicked
@@ -346,16 +451,17 @@ public class Principal extends javax.swing.JFrame {
             modelo.addElement(paises.get(i).getNombre());
             
         }
-
+        
         nombre_nacionalidad.setModel(modelo);
         
-       
+
         
         
     }//GEN-LAST:event_nombre_nacionalidadMouseClicked
 
     private void nombre_nacionalidadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_nombre_nacionalidadActionPerformed
-        // TODO add your handling code here:
+
+        
     }//GEN-LAST:event_nombre_nacionalidadActionPerformed
 
     private void AnadirNadadoralPaisMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnadirNadadoralPaisMouseClicked
@@ -364,11 +470,82 @@ public class Principal extends javax.swing.JFrame {
        paises.get(i).getNadadores().add(new Nadador(nombre_nadador.getText(),(String)nombre_nacionalidad.getSelectedItem(), (double)edad.getValue(),(double)estatura.getValue(),(String)estilonatacion.getSelectedItem(), (int)distancia.getSelectedIndex(),(int)tiempo.getValue(),(int)medallas_nadador.getValue()));
             
         }//Fin del for
+        
+        JOptionPane.showMessageDialog(this, "Nadador agregado");
+        
+ 
     }//GEN-LAST:event_AnadirNadadoralPaisMouseClicked
 
     private void CrearEventoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearEventoMouseClicked
-                        eventos.add(new Evento((String)cb_estiloevento.getSelectedItem(),(int)distanciaeventocb.getSelectedIndex(),(int)recordevento.getValue()));
+       eventos.add(new Evento((String)cb_estiloevento.getSelectedItem(),(int)distanciaeventocb.getSelectedIndex(),(int)recordevento.getValue()));
+       
+       JOptionPane.showMessageDialog(this, "Evento agregado");
     }//GEN-LAST:event_CrearEventoMouseClicked
+
+    private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
+        
+        if (jTabbedPane1.getSelectedIndex()==3) {
+            
+            int cont=0;
+            
+             DefaultTableModel modelo = (DefaultTableModel)tablanadadores.getModel();
+            
+            for (int i = 0; i < paises.size(); i++) {
+                
+                if (CB_listarpaises.getSelectedItem().toString().equals(paises.get(i).getNadadores().get(i).getNacionalidad())) {
+                    
+                    
+                } 
+            }
+                
+            }
+    }//GEN-LAST:event_jTabbedPane1StateChanged
+
+    private void CB_listarpaisesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CB_listarpaisesMouseClicked
+        DefaultComboBoxModel modelo=(DefaultComboBoxModel)CB_listarpaises.getModel();
+        
+        for (int i = 0; i < paises.size(); i++) {
+            modelo.addElement(paises.get(i).getNombre());
+            
+        }
+        
+        CB_listarpaises.setModel(modelo);
+        
+
+        
+    }//GEN-LAST:event_CB_listarpaisesMouseClicked
+
+    private void nombre_nacionalidadItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_nombre_nacionalidadItemStateChanged
+      
+        
+    }//GEN-LAST:event_nombre_nacionalidadItemStateChanged
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+       
+            
+            int cont=0;
+            
+     
+            
+             DefaultTableModel modelo = (DefaultTableModel)tablanadadores.getModel();
+            
+            for (int i = 0; i < paises.size(); i++) {
+                
+                if (CB_listarpaises.getSelectedItem().toString().equals(paises.get(i).getNadadores().get(i).getNacionalidad())) {
+                    
+                    modelo.setValueAt(paises.get(i).getNadadores().get(i).getNombre_nadador(), cont, 0);
+                     modelo.setValueAt(paises.get(i).getNadadores().get(i).getEdad(), cont, 1);
+                      modelo.setValueAt(paises.get(i).getNadadores().get(i).getMetros(), cont, 2);
+                       modelo.setValueAt(paises.get(i).getNadadores().get(i).getEstilo_natacion(), cont, 3);
+                       modelo.setValueAt(paises.get(i).getNadadores().get(i).getDistancia(), cont, 4);
+                      modelo.setValueAt(paises.get(i).getNadadores().get(i).getTiemporapido(), cont, 5);
+                        modelo.setValueAt(paises.get(i).getNadadores().get(i).getNum_medallas(), cont, 6);
+                     
+                } 
+            }
+                
+            
+    }//GEN-LAST:event_jButton2MouseClicked
 
     /**
      * @param args the command line arguments
@@ -407,6 +584,7 @@ public class Principal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AnadirNadadoralPais;
+    private javax.swing.JComboBox<String> CB_listarpaises;
     private javax.swing.JButton CrearEvento;
     private javax.swing.JComboBox<String> cb_estiloevento;
     private javax.swing.JComboBox<String> distancia;
@@ -415,6 +593,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JSpinner estatura;
     private javax.swing.JComboBox<String> estilonatacion;
     private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -432,8 +611,12 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel7;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JSpinner medallas_nadador;
     private javax.swing.JTextArea nombepais;
@@ -441,6 +624,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JTextArea nombre_nadador;
     private javax.swing.JSpinner numemdallas;
     private javax.swing.JSpinner recordevento;
+    private javax.swing.JTable tablanadadores;
     private javax.swing.JSpinner tiempo;
     // End of variables declaration//GEN-END:variables
   ArrayList <Pais> paises= new ArrayList <>(); 
