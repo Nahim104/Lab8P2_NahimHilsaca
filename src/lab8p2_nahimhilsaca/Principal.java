@@ -95,8 +95,6 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane3 = new javax.swing.JScrollPane();
         tablanadadores = new javax.swing.JTable();
         jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
 
         EliminarNadador.setText("jMenuItem1");
         EliminarNadador.addActionListener(new java.awt.event.ActionListener() {
@@ -143,6 +141,11 @@ public class Principal extends javax.swing.JFrame {
                 CrearEventoMouseClicked(evt);
             }
         });
+        CrearEvento.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CrearEventoActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -161,9 +164,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(recordevento))
                 .addGap(137, 137, 137))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(327, 327, 327)
+                .addGap(326, 326, 326)
                 .addComponent(CrearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 298, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(415, Short.MAX_VALUE))
+                .addContainerGap(416, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,9 +183,9 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(recordevento, javax.swing.GroupLayout.DEFAULT_SIZE, 84, Short.MAX_VALUE))
-                .addGap(43, 43, 43)
+                .addGap(115, 115, 115)
                 .addComponent(CrearEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(337, Short.MAX_VALUE))
+                .addContainerGap(265, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Crear Evento", jPanel3);
@@ -401,11 +404,11 @@ public class Principal extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addGap(366, 366, 366)
-                        .addComponent(botonactualizareventos, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(85, 85, 85)
-                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 862, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGap(330, 330, 330)
+                        .addComponent(botonactualizareventos, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
@@ -503,20 +506,6 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Guardar Tabla");
-        jButton4.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton4MouseClicked(evt);
-            }
-        });
-
-        jButton5.setText("Leer Tabla");
-        jButton5.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButton5MouseClicked(evt);
-            }
-        });
-
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
@@ -528,11 +517,7 @@ public class Principal extends javax.swing.JFrame {
                         .addComponent(CB_listarpaises, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(119, 119, 119)
                         .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(38, 38, 38)
-                        .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20))
+                        .addGap(413, 413, 413))
                     .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 957, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(43, Short.MAX_VALUE))
         );
@@ -542,10 +527,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(CB_listarpaises)
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 552, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(96, Short.MAX_VALUE))
@@ -578,6 +560,28 @@ public class Principal extends javax.swing.JFrame {
        
        nombepais.setText("");
         JOptionPane.showMessageDialog(this, "Pais agregado");
+        
+         File archivo= new File("PaisesPrincipiantes.omf");
+        try {
+            FileOutputStream fr= new FileOutputStream(archivo);
+            ObjectOutputStream bw= new ObjectOutputStream(fr);
+            
+            for (Pais pais : paises) {
+                
+                bw.writeObject(pais);
+                
+            }
+            
+            bw.close();
+            fr.close();
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
+        
+       
         
         
     }//GEN-LAST:event_jButton1MouseClicked
@@ -625,6 +629,25 @@ public class Principal extends javax.swing.JFrame {
             
         }//Fin del for
         
+         File archivo= new File("NadadoresPrincipiantes.omf");
+        try {
+            FileOutputStream fr= new FileOutputStream(archivo);
+            ObjectOutputStream bw= new ObjectOutputStream(fr);
+            
+            for (Pais pais : paises) {
+                
+                bw.writeObject(pais.getNadadores());
+                
+            }
+            
+            bw.close();
+            fr.close();
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        
         JOptionPane.showMessageDialog(this, "Nadador agregado");
         
  
@@ -650,6 +673,25 @@ public class Principal extends javax.swing.JFrame {
                eventos.add(new Evento((String)cb_estiloevento.getSelectedItem(),index,(int)recordevento.getValue()));
        
        JOptionPane.showMessageDialog(this, "Evento agregado");
+       
+        File archivo= new File("NadadoresPrincipiantes.omf");
+        try {
+            FileOutputStream fr= new FileOutputStream(archivo);
+            ObjectOutputStream bw= new ObjectOutputStream(fr);
+            
+            for (Evento evento : eventos) {
+                
+                bw.writeObject(evento);
+                
+            }
+            
+            bw.close();
+            fr.close();
+            
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_CrearEventoMouseClicked
 
     private void jTabbedPane1StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jTabbedPane1StateChanged
@@ -756,7 +798,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
        if (tablaeventos.getSelectedRow()>=0) {
-            
+         
             DefaultTableModel modelo=(DefaultTableModel) tablaeventos.getModel();
             
             modelo.removeRow(tablaeventos.getSelectedRow());
@@ -766,79 +808,9 @@ public class Principal extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EliminarActionPerformed
 
-    private void jButton4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton4MouseClicked
-         JFileChooser fc = new JFileChooser();
-        FileNameExtensionFilter filter = 
-                    new FileNameExtensionFilter(
-                            "NadadoresParticipantes", "omf");
-         fc.setFileFilter(filter); 
-        int select = fc.showSaveDialog(this); 
-       
-        FileOutputStream fw = null;
-        ObjectOutputStream bw = null;
-        if (select == JFileChooser.APPROVE_OPTION) {
-             try {
-                 
-                  File archivo=null;
-                if (fc.getFileFilter().getDescription().equals(
-                        "NadadoresParticipantes")) {// File de tipo Arbol Binario
-                    
-                    archivo = 
-                        new File(fc.getSelectedFile().getPath()+".omf");
-                }else{
-                    archivo = fc.getSelectedFile();
-                }   
-                
-                fw = new FileOutputStream(archivo);// El canal apunta al archivo
-                bw = new ObjectOutputStream(fw);// El buffer al canal
-                
-                NadadoresBinarios nadador= new NadadoresBinarios(tablanadadores);
-                bw.writeObject(nadador);
-                bw.flush();
-                
-                JOptionPane.showMessageDialog(this, 
-                        "Archivo guardado exitosamente");  
-                
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-                               
-        }
-        try {
-                    bw.close();
-                    fw.close();
-                } catch (IOException ex) {
-           } 
-
-    }//GEN-LAST:event_jButton4MouseClicked
-
-    private void jButton5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton5MouseClicked
-          File archivo= null;
-        FileInputStream fr= null;
-        ObjectInputStream br= null;
-        
-        try {
-            JFileChooser fc= new JFileChooser();
-            FileNameExtensionFilter filtro= new FileNameExtensionFilter("Arbol Binario", "omf");
-            
-            fc.setFileFilter(filtro);
-            
-            int select= fc.showSaveDialog(this);
-            
-            if (select ==JFileChooser.APPROVE_OPTION) {
-                
-                archivo= fc.getSelectedFile();
-                
-                fr=new FileInputStream(archivo);
-                br= new ObjectInputStream(fr);
-                
-                NadadoresBinarios nadar= (NadadoresBinarios) br.readObject();
-                tablanadadores.setModel(((NadadoresBinarios) nadar).getTabla().getModel());
-               
-            }//Fin del if
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_jButton5MouseClicked
+    private void CrearEventoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CrearEventoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CrearEventoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -893,8 +865,6 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

@@ -4,11 +4,13 @@
  */
 package lab8p2_nahimhilsaca;
 
+import java.io.Serializable;
+
 /**
  *
  * @author nahim
  */
-public class Evento {
+public class Evento implements Serializable{
     private String estilo_natacion;
     private int distancia_evento;
     private int record_actual;
