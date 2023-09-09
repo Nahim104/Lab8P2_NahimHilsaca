@@ -8,8 +8,6 @@ package lab8p2_nahimhilsaca;
  *
  * @author nahim
  */
-public class Simulacion extends Thread{
-    
-    
+public class Nadador2 {
     
 }
